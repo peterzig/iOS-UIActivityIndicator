@@ -10,9 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    @IBAction func startBtn(_ sender: Any) {
+        activityIndicator.startAnimating();
+    }
+    
+    @IBAction func stopBtn(_ sender: Any) {
+        activityIndicator.stopAnimating();
+    }
+    
     override func viewDidLoad() {
+        
+        activityIndicator.hidesWhenStopped = true;
+        activityIndicator.activityIndicatorViewStyle  = UIActivityIndicatorViewStyle.gray
+        activityIndicator.center = view.center;
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
